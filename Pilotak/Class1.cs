@@ -21,6 +21,14 @@ namespace Pilotak
             this.rajtszam = rajtszam;
         }
 
+        public Class1(string nev, string szuldate, string nemzetiseg)
+        {
+            this.nev = nev;
+            this.szuldate = szuldate;
+            this.nemzetiseg = nemzetiseg;
+            
+        }
+
         public string Nev { get => nev; set => nev = value; }
         public string Szuldate { get => szuldate; set => szuldate = value; }
         public string Nemzetiseg { get => nemzetiseg; set => nemzetiseg = value; }

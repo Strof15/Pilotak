@@ -1,8 +1,6 @@
 ﻿
+using Pilotak;
 
-
-namespace Pilotak 
-{
     internal class prog 
     {
         static void main(string[] args) 
@@ -13,8 +11,6 @@ namespace Pilotak
             otosfeladat();
         }
         static List<Class1> pilotatomb = new List<Class1>();
-        
-        static List<string> valami;
 
         static void Beolvasas()
             {
@@ -28,8 +24,8 @@ namespace Pilotak
 
                 if (adat[3] == "") 
                 {
-                    adat[3] = "";
-                    pilotatomb.Add(new Class1(adat[0], adat[1], adat[2], int.Parse(adat[3])));
+                    
+                    pilotatomb.Add(new Class1(adat[0], adat[1], adat[2]));
                    
                 }
                 else
@@ -37,7 +33,7 @@ namespace Pilotak
                     pilotatomb.Add(new Class1(adat[0], adat[1], adat[2], int.Parse(adat[3])));
                     
                 }
-                     valami = adat[1].Split(".").ToList();
+                   
 
                 }
 
@@ -61,11 +57,13 @@ namespace Pilotak
         {
             
             Console.WriteLine("5. feladat:");
-           
-            string[] otoshoztomb = pilotatomb.Count.ToString().Split(".");
-            if (valami[0])
+           foreach ( var x in pilotatomb )
             {
-                
+                string[] datumsplit = x.Szuldate.Split(".");
+            if (1901 > int.Parse(datumsplit[0]))
+            {
+                Console.WriteLine($"\t{x.Nev}({x.Szuldate})");
+            }
 
             }
 
@@ -83,4 +81,4 @@ namespace Pilotak
     }
 
 
-}
+
